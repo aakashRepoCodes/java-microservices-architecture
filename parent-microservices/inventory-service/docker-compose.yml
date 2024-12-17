@@ -1,0 +1,22 @@
+version: '4'
+services:
+  mysql:
+    image: mysql:8.3.0
+    container_name: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword     # Root password
+      MYSQL_DATABASE: inventory_service     # Database to create
+      MYSQL_USER: springuser                # Non-root user to create
+      MYSQL_PASSWORD: springpassword        # Password for the user
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - "8085:8080"
