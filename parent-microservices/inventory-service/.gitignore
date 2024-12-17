@@ -1,0 +1,60 @@
+# Ignore IntelliJ IDEA and other IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+*.sdi
+
+# Ignore logs
+*.log
+*.tmp
+*.swp
+log_status_*.*
+memory_*.*
+metrics.*
+
+# Ignore MySQL data directories
+docker/mysql/data/
+docker/mysql/data/**
+
+# Ignore MongoDB data directories
+data/mongodb/
+data/mongodb/**
+
+# Ignore Maven/Gradle build directories
+target/
+build/
+*.jar
+*.war
+*.ear
+
+# Ignore generated diagnostic files
+diagnostic.data/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.~*
+*.bak
+*.tmp
+
+# Ignore environmental files
+.env
+.env.*
+*.properties
+*.local
+
+# Ignore specific tools/files
+material_theme_project_new.xml
+misc.xml
+
+# Ignore backup files
+*.orig
+*.old
+
+# Ignore metrics and other timestamped files
+metrics.*
+*.sdi
+*.xml
