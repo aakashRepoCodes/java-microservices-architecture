@@ -2,21 +2,21 @@ version: '4'
 services:
   mysql:
     image: mysql:8.3.0
-    container_name: mysql_inventory
+    container_name: mysql_order
     ports:
-      - "3307:3306"
+      - "3308:3306"
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword     # Root password
-      MYSQL_DATABASE: inventory_service     # Database to create
-      MYSQL_USER: springuser                # Non-root user to create
-      MYSQL_PASSWORD: springpassword        # Password for the user
+      MYSQL_DATABASE: order_service     # Database to create
+      MYSQL_USER: productuser                # Non-root user to create
+      MYSQL_PASSWORD: productpassword        # Password for the user
     volumes:
       - ./docker/mysql/data:/var/lib/mysql
       - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   adminer:
     image: adminer
-    container_name: adminer_inventory
+    container_name: adminer_order
     restart: always
     ports:
-      - "8084:8080"
+      - "8086:8080"

@@ -3,23 +3,21 @@ package com.mservices.orderservice.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.List;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "t_orders")
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String orderNumber;
-    @OneToMany (cascade = CascadeType.ALL)
-    private List<OrderItem> orderItemList;
-
+    private String skuCode;
+    private BigDecimal price;
+    private Integer quantity;
 }
