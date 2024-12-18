@@ -23,6 +23,7 @@ public class ProductService {
                 .name(productRequest.getName())
                 .description(productRequest.getDescription())
                 .price(productRequest.getPrice())
+                .skuCode(productRequest.getSkuCode())
                 .build();
 
         productRepository.save(product);
@@ -41,6 +42,7 @@ public class ProductService {
                .name(product.getName())
                .price(product.getPrice())
                .description(product.getDescription())
+               .skuCode(product.getSkuCode())
                .build();
     }
 }
