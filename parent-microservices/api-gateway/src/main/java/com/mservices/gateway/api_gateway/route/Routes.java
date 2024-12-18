@@ -1,4 +1,4 @@
-package com.mservices.gateway.api_gateway.config;
+package com.mservices.gateway.api_gateway.route;
 
 import org.springframework.cloud.gateway.server.mvc.handler.GatewayRouterFunctions;
 import org.springframework.cloud.gateway.server.mvc.handler.HandlerFunctions;
