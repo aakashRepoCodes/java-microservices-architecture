@@ -35,6 +35,7 @@ dependencies {
 	testImplementation 'org.testcontainers:mysql'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation 'javax.persistence:javax.persistence-api:2.2'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
 
 }
 
