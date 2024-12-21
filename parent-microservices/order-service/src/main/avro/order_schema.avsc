@@ -1,9 +1,8 @@
 {
   "type": "record",
-  "name": "Order",
+  "name": "SimpleOrder",
   "namespace": "com.example.kafka",
   "fields": [
-    { "email": "value", "type": "string" },
-    { "skuCode": "code", "type": "string" },
+    { "name": "orderId", "type": "string" }
   ]
 }

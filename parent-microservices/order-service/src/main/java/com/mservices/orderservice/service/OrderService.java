@@ -1,6 +1,8 @@
 package com.mservices.orderservice.service;
 
+import com.example.kafka.SimpleOrder;
 import com.mservices.orderservice.client.InventoryClient;
+import com.mservices.orderservice.dto.OrderPlaced;
 import com.mservices.orderservice.dto.OrderRequest;
 import com.mservices.orderservice.model.Order;
 import com.mservices.orderservice.repository.OrderRepository;
@@ -30,8 +32,16 @@ public class OrderService {
             order.setQuantity(orderRequest.getQuantity());
             orderRepository.save(order);
 
-            var orderRequest1 = new OrderRequest("skuCode", BigDecimal.ONE, 1);
-            kafkaOrderService.sendOrderEvent(orderRequest1);
+            /*com.example.kafka.Order orderPlaced = com.example.kafka.Order.newBuilder()
+                    .setEmail("some@gmail.com")
+                    .setSkuCode("skuCode123")
+                    .build();*/
+
+            try {
+                kafkaOrderService.sendOrderEvent("event");
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
 
         } else {
             throw new RuntimeException("Inventory has no stocks available for this product");
