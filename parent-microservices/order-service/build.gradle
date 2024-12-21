@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.2.5'
 	id 'io.spring.dependency-management' version '1.1.4'
+	id "com.github.davidmc24.gradle.plugin.avro" version '1.9.1'
 }
 
 group = 'com.mservies'
@@ -17,8 +18,28 @@ configurations {
 	}
 }
 
+avro {
+	stringType = "String"                    // Use Java String for Avro strings
+	outputCharacterEncoding = "UTF-8"        // Set encoding for generated files
+	createSetters = true                     // Generate setters for fields
+	fieldVisibility = "PRIVATE"              // Use private fields in generated classes
+}
+
+// Add the generated Avro files to the source set
+sourceSets {
+	main {
+		java {
+			srcDirs += "$buildDir/generated-main-avro-java"
+		}
+	}
+}
+
 repositories {
+	gradlePluginPortal()
 	mavenCentral()
+	maven {
+		url 'https://packages.confluent.io/maven/'
+	}
 }
 dependencyManagement {
 	imports {
@@ -34,6 +55,15 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
+
+	// Spring Kafka support for Avro
+	implementation 'io.confluent:kafka-avro-serializer:7.3.0'
+
+	// Spring Kafka
+	implementation 'org.springframework.kafka:spring-kafka'
+
+	// Avro Schema Compiler (optional, for generating Java classes from .avsc files)
+	implementation 'org.apache.avro:avro:1.12.0'
 }
 
 tasks.named('test') {
