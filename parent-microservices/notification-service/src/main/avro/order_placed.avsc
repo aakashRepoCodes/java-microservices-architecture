@@ -1,6 +1,6 @@
 {
   "type": "record",
-  "name": "SimpleOrder",
+  "name": "EmailEvent",
   "namespace": "com.example.kafka",
   "fields": [
     { "name": "email", "type": "string" }

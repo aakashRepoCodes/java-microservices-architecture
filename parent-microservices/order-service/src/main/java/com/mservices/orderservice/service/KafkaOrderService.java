@@ -1,9 +1,5 @@
 package com.mservices.orderservice.service;
 
-import com.example.kafka.Order;
-import com.example.kafka.SimpleOrder;
-import com.mservices.orderservice.dto.OrderPlaced;
-import com.mservices.orderservice.dto.OrderRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;

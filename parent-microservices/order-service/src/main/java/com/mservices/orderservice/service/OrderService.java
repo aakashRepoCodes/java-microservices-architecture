@@ -38,7 +38,7 @@ public class OrderService {
                     .build();*/
 
             try {
-                kafkaOrderService.sendOrderEvent("event");
+                kafkaOrderService.sendOrderEvent("userEmail@gmail.com");
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
