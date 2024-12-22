@@ -1,5 +1,6 @@
 package com.mservices.notification.notification_service.service;
 
+import com.mservices.orderservice.event.SimpleOrder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
@@ -17,13 +18,13 @@ public class NotificationService {
         this.emailService = emailService;
     }
 
-    @KafkaListener(topics = "order-events", groupId = "notification-service")
-    public void consumeMessage(String message){
+    @KafkaListener(topics = "${spring.kafka.topic.order-events}", groupId = "notification-service")
+    public void consumeOrderEvent(SimpleOrder orderPlaced) {
         try {
-            System.out.println("Received message: " + message);
-            emailService.sendOrderConfirmationEmail("aakashchaturvedi7@gmail.com", "12");
+            System.out.println("Received message: " + orderPlaced.getOrderId());
+            emailService.sendOrderConfirmationEmail("aakashchaturvedi7@gmail.com", orderPlaced.getOrderId());
         } catch (Exception e) {
-            throw new RuntimeException("Error processing message: " + message, e);
+            throw new RuntimeException("Error processing message: " + orderPlaced.getOrderId(), e);
         }
     }
 

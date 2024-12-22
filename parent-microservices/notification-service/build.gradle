@@ -1,7 +1,8 @@
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.3.7'
-	id 'io.spring.dependency-management' version '1.1.7'
+	id 'io.spring.dependency-management' version '1.1.4'
+	id "com.github.davidmc24.gradle.plugin.avro" version '1.9.1'
 }
 
 group = 'com.mservices.notification'
@@ -10,6 +11,20 @@ version = '0.0.1-SNAPSHOT'
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+avro {
+	stringType = "String"                    // Use Java String for Avro strings
+	outputCharacterEncoding = "UTF-8"        // Set encoding for generated files
+	createSetters = true                     // Generate setters for fields
+	fieldVisibility = "PRIVATE"              // Use private fields in generated classes
+}
+
+sourceSets {
+	main {
+		java {
+			srcDirs += "$buildDir/generated-main-avro-java"
+		}
 	}
 }
 

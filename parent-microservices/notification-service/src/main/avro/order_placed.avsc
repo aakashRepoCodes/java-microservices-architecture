@@ -1,8 +1,9 @@
 {
   "type": "record",
-  "name": "EmailEvent",
-  "namespace": "com.example.kafka",
+  "name": "SimpleOrder",
+  "namespace": "com.mservices.orderservice.event",
   "fields": [
-    { "name": "email", "type": "string" }
+    { "name": "email", "type": "string" },
+    { "name": "orderId", "type": "string" }
   ]
 }

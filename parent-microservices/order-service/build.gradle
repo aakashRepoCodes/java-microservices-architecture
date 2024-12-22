@@ -25,7 +25,6 @@ avro {
 	fieldVisibility = "PRIVATE"              // Use private fields in generated classes
 }
 
-// Add the generated Avro files to the source set
 sourceSets {
 	main {
 		java {
@@ -33,7 +32,6 @@ sourceSets {
 		}
 	}
 }
-
 repositories {
 	gradlePluginPortal()
 	mavenCentral()

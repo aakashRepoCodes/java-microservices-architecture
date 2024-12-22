@@ -1,9 +1,9 @@
 package com.mservices.orderservice.service;
 
-import com.example.kafka.SimpleOrder;
 import com.mservices.orderservice.client.InventoryClient;
 import com.mservices.orderservice.dto.OrderPlaced;
 import com.mservices.orderservice.dto.OrderRequest;
+import com.mservices.orderservice.event.SimpleOrder;
 import com.mservices.orderservice.model.Order;
 import com.mservices.orderservice.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
@@ -32,13 +32,13 @@ public class OrderService {
             order.setQuantity(orderRequest.getQuantity());
             orderRepository.save(order);
 
-            /*com.example.kafka.Order orderPlaced = com.example.kafka.Order.newBuilder()
+           var OderEvent = SimpleOrder.newBuilder()
                     .setEmail("some@gmail.com")
-                    .setSkuCode("skuCode123")
-                    .build();*/
+                    .setOrderId(order.getOrderNumber().toString())
+                    .build();
 
             try {
-                kafkaOrderService.sendOrderEvent("userEmail@gmail.com");
+                kafkaOrderService.sendOrderEvent(OderEvent);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
