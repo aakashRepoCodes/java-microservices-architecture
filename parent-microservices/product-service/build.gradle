@@ -28,6 +28,18 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
+
+	//after loki
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'io.micrometer:micrometer-registry-prometheus'
+
+	//for distributed tracing
+	implementation 'io.micrometer:micrometer-tracing-bridge-brave'
+	implementation 'org.springframework.cloud:spring-cloud-sleuth-zipkin'
+
+	//aspect oriented programming
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+
 }
 
 tasks.named('test') {
