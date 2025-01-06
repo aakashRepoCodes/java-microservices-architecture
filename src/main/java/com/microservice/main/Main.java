@@ -1,4 +1,4 @@
-package com.tech.graphql;
+package com.microservice.main;
 
 public class Main {
     public static void main(String[] args) {
