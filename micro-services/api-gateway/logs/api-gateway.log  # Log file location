@@ -1,0 +1,19 @@
+2025-01-06T11:34:06.740+01:00  INFO 60235 --- [api-gateway] [Test worker] c.m.g.a.ApiGatewayApplicationTests       : Starting ApiGatewayApplicationTests using Java 21.0.5 with PID 60235 (started by aakashchaturvedi in /Users/aakashchaturvedi/Documents/Personal/JavaEE/java-microservices-architecture/api-gateway)
+2025-01-06T11:34:06.744+01:00  INFO 60235 --- [api-gateway] [Test worker] c.m.g.a.ApiGatewayApplicationTests       : No active profile set, falling back to 1 default profile: "default"
+2025-01-06T11:34:07.020+01:00  INFO 60235 --- [api-gateway] [Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=bbfc19ca-77f0-3c90-8433-a47f605a0140
+2025-01-06T11:34:07.396+01:00  INFO 60235 --- [api-gateway] [Test worker] c.m.g.a.ApiGatewayApplicationTests       : Started ApiGatewayApplicationTests in 0.748 seconds (process running for 1.19)
+2025-01-06T11:34:30.893+01:00  INFO 60305 --- [api-gateway] [main] c.m.g.api_gateway.ApiGatewayApplication  : Starting ApiGatewayApplication using Java 21.0.5 with PID 60305 (/Users/aakashchaturvedi/Documents/Personal/JavaEE/java-microservices-architecture/api-gateway/build/classes/java/main started by aakashchaturvedi in /Users/aakashchaturvedi/Documents/Personal/JavaEE/java-microservices-architecture/api-gateway)
+2025-01-06T11:34:30.894+01:00  INFO 60305 --- [api-gateway] [main] c.m.g.api_gateway.ApiGatewayApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-01-06T11:34:31.177+01:00  INFO 60305 --- [api-gateway] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ecfe2ad5-ba6b-3cc7-aef9-3b8a98171867
+2025-01-06T11:34:31.264+01:00  INFO 60305 --- [api-gateway] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9003 (http)
+2025-01-06T11:34:31.269+01:00  INFO 60305 --- [api-gateway] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-06T11:34:31.270+01:00  INFO 60305 --- [api-gateway] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-06T11:34:31.290+01:00  INFO 60305 --- [api-gateway] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-06T11:34:31.290+01:00  INFO 60305 --- [api-gateway] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 383 ms
+2025-01-06T11:34:31.583+01:00  INFO 60305 --- [api-gateway] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9003 (http) with context path '/'
+2025-01-06T11:34:31.589+01:00  INFO 60305 --- [api-gateway] [main] c.m.g.api_gateway.ApiGatewayApplication  : Started ApiGatewayApplication in 0.842 seconds (process running for 1.024)
+2025-01-06T11:34:31.745+01:00  INFO 60305 --- [api-gateway] [http-nio-9003-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-06T11:34:31.745+01:00  INFO 60305 --- [api-gateway] [http-nio-9003-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-06T11:34:31.746+01:00  INFO 60305 --- [api-gateway] [http-nio-9003-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-01-06T11:42:59.662+01:00  INFO 60305 --- [api-gateway] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-06T11:42:59.667+01:00  INFO 60305 --- [api-gateway] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
