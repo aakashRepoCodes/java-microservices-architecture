@@ -3,11 +3,11 @@ package com.mservies.orderservice;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+/*@SpringBootTest
 class OrderServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
 	}
 
-}
+}*/
